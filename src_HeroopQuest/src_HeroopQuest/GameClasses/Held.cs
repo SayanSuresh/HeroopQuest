@@ -7,6 +7,36 @@ namespace src_HeroopQuest.GameClasses
     enum HeldType {Barbaar, Dwerg, Elf, Tovenaar}
     class Held
     {
+        public Held(HeldType type, string naam)
+        {
+            Naam = naam;
+          heldType = type;
+            switch (type)
+            {
+                case HeldType.Barbaar:
+                    AanvalDobellStenen = 3;
+                    MaxIntelleigentie = 2;
+                    MaxLichaam = 8;
+                    break;
+                case HeldType.Dwerg:
+                    MaxIntelleigentie = 2;
+                    MaxLichaam = 8;
+                    break;
+                case HeldType.Elf:
+                    MaxIntelleigentie = 2;
+                    MaxLichaam = 8;
+                    break;
+                case HeldType.Tovenaar:
+                    MaxIntelleigentie = 2;
+                    MaxLichaam = 8;
+                    break;
+                default:
+                    break;
+            }
+            HuidigIntelligentie = MaxIntelleigentie;
+            HuidigLichaam = MaxLichaam;
+        }
+
         public string Naam { get; set; }
         public string Bechschrijving { get; private set; }
         public int MaxIntelleigentie { get; private set; }
